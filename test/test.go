@@ -26,7 +26,7 @@ func main() {
 	v.SetStart(0)
 	v.SetEnd(10)
 	v.SetSize(400, 400)
-	v.Render("test_output.mp4")
+	v.Render("test_output.mov")
 
 	// testing all getters
 	fmt.Println(v.GetFilepath())
