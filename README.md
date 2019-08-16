@@ -13,7 +13,7 @@ go get github.com/jtguibas/cinema
 
 ## Example Usage
 
-```
+```golang
 func main() { // cinema/test/test.go
 
 	// loading the test video
