@@ -8,7 +8,6 @@ cinema is a super simple video editor that supports video io, video trimming, an
 
 ```
 go get github.com/jtguibas/cinema
-
 ```
 
 ## Example Usage
@@ -46,7 +45,3 @@ func main() { // cinema/test/test.go
 ## Author
 
 (John T. Guibas)[https://github.com/jtguibas]
-
-## License
-
-Public Domain.
