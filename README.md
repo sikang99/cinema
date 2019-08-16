@@ -44,4 +44,4 @@ func main() { // cinema/test/test.go
 
 ## Author
 
-(John T. Guibas)[https://github.com/jtguibas]
+[John T. Guibas](https://github.com/jtguibas)
