@@ -1,4 +1,4 @@
-# cinema : the lightweight video editor for golang 🤠
+# cinema : a lightweight video editor for golang 🤠
 
 ## Overview
 
