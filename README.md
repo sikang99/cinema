@@ -59,9 +59,3 @@ func main() { // cinema/test/test.go
 | v.GetWidth() int64 | get the width for the current video object in pixels |
 | v.GetHeight() int64  | get the height for the current video object in pixels  |
 | v.GetDuration() float64  | get the duration of the current video in seconds |
-
-
-
-## Author
-
-[John T. Guibas](https://github.com/jtguibas)
