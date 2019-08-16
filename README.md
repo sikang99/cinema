@@ -32,7 +32,7 @@ func main() { // cinema/test/test.go
 	v.SetStart(0)
 	v.SetEnd(10)
 	v.SetSize(400, 400)
-	v.Render("test_output.mp4")
+	v.Render("test_output.mov") // notice how it can convert formats with ease
 
 	// testing all getters
 	fmt.Println(v.GetFilepath())
@@ -48,7 +48,7 @@ func main() { // cinema/test/test.go
 | Function | Description |
 | --- | --- |
 | cinema.MakeVideo(filepath string) | creates Video object based on filepath, will load relevant metadata using ffprobe |
-| v.Render(output string) | render the video based on your configuration based on the output string |
+| v.Render(output string) | render the video based on your configuration based on the output string, will autoconvert to different formats |
 | v.Trim(start float64, end float64) | trim video based in seconds |
 | v.SetStart(start float64) | set the start of the video in seconds |
 | v.SetEnd(end float64) | set the end of the video in seconds |
