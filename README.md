@@ -5,7 +5,7 @@
 cinema is a super simple video editor that supports video io, video trimming, and resizing. it is dependent on ffmpeg, an advanced command-line tool used for handling video, audio, and other multimedia files and streams. 
 
 ## Install
-
+You must have FFMPEG installed on your machine! Make sure `ffmpeg` and `ffprobe` are available from the command line on your machine.
 ```
 go get github.com/jtguibas/cinema
 ```
