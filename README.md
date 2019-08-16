@@ -1,5 +1,10 @@
 # cinema : a lightweight video editor for golang 🤠
 
+TODO:
+- add concatenation
+- add cropping
+- add ffmpeg.exe support
+
 ## Overview
 
 cinema is a super simple video editor that supports video io, video trimming, and resizing. it is dependent on ffmpeg, an advanced command-line tool used for handling video, audio, and other multimedia files and streams. 
