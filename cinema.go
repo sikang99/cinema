@@ -9,6 +9,7 @@ import (
 	"github.com/tidwall/gjson"
 )
 
+// The structure that defines the Video structure. All the values in this structure will be filled when MakeVideo is called.
 type Video struct {
 	filepath string
 	width    int64
@@ -18,6 +19,9 @@ type Video struct {
 	duration float64
 }
 
+// MakeVideo takes in the filepath of any videofile supported by FFMPEG.
+// It will return a Video structure with all of the values parsed from FFPROBE.
+// Note: This will not load the video into memory.
 func MakeVideo(filepath string) (Video, error) {
 	cmd := exec.Command("ffprobe", "-v", "quiet", "-print_format", "json", "-show_format", "-show_streams", filepath)
 	out, err := cmd.Output()
@@ -35,6 +39,8 @@ func MakeVideo(filepath string) (Video, error) {
 	return Video{filepath: filepath, width: width, height: height, start: 0, end: duration, duration: duration}, nil
 }
 
+// This function will take the configuration set in the Video structure and properly apply it to the rendered video.
+// Currently supports trimming, scaling, and video format conversion.
 func (v *Video) Render(output string) {
 
 	cmd := exec.Command("ffmpeg",
@@ -61,54 +67,64 @@ func (v *Video) Render(output string) {
 
 }
 
+// Trim the video in seconds
 func (v *Video) Trim(start float64, end float64) {
 	v.start = start
 	v.end = end
 }
 
-// Setters
+// Trim to the start of the video in seconds
 func (v *Video) SetStart(start float64) {
 	v.start = start
 }
 
+// Trim the end of the video using seconds
 func (v *Video) SetEnd(end float64) {
 	v.end = end
 }
 
+// Set the width and height of the video
 func (v *Video) SetSize(width int64, height int64) {
 	v.width = width
 	v.height = height
 }
 
+// Set the width of the video
 func (v *Video) SetWidth(width int64) {
 	v.width = width
 }
 
+// Set the height of the video
 func (v *Video) SetHeight(height int64) {
 	v.height = height
 }
 
-// Getters
+// Get the filepath of the current video struct
 func (v *Video) Filepath() string {
 	return v.filepath
 }
 
+// Get the start of the current video struct
 func (v *Video) Start() float64 {
 	return v.start
 }
 
+// Get the end of the current video struct
 func (v *Video) End() float64 {
 	return v.end
 }
 
+// Get the width of the current video struct
 func (v *Video) Width() int64 {
 	return v.width
 }
 
+// Get the height of the current video struct
 func (v *Video) Height() int64 {
 	return v.height
 }
 
+// Get the duration of the current video struct
 func (v *Video) Duration() float64 {
 	return v.duration
 }
