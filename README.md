@@ -1,9 +1,5 @@
 # cinema : a lightweight video editor for golang 🤠
 
-TODO:
-- add concatenation
-- add cropping
-
 ## Overview [![GoDoc](https://godoc.org/github.com/jtguibas/cinema?status.svg)](https://godoc.org/github.com/jtguibas/cinema)
 
 cinema is a super simple video editor that supports video io, video trimming, and resizing. it is dependent on ffmpeg, an advanced command-line tool used for handling video, audio, and other multimedia files and streams. 
@@ -45,3 +41,10 @@ func main() { // cinema/test/test.go
 	fmt.Println(v.GetDuration())
 }
 ```
+
+### TODO
+
+- [ ] add concatenation support
+- [ ] improve godoc documentation
+- [ ] add cropping support
+- [ ] expand to audio
