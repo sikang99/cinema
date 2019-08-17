@@ -56,3 +56,7 @@ func main() { // cinema/test/test.go
 - [ ] add cropping support
 - [ ] expand to audio
 - [ ] test windows and ubuntu support 
+
+## Contact
+John T. Guibas [@jtguibas](https://github.com/jtguibas)
+
