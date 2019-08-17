@@ -19,7 +19,10 @@ func main() {
 	}
 
 	// initializing the test video as a cinema video object
-	v := cinema.MakeVideo("test_input.mp4")
+	v, err := cinema.MakeVideo("test_input.mp4")
+	if err != nil {
+		fmt.Println(err)
+	}
 
 	// testing all setters
 	v.Trim(0, 10)
@@ -29,12 +32,12 @@ func main() {
 	v.Render("test_output.mov")
 
 	// testing all getters
-	fmt.Println(v.GetFilepath())
-	fmt.Println(v.GetStart())
-	fmt.Println(v.GetEnd())
-	fmt.Println(v.GetWidth())
-	fmt.Println(v.GetHeight())
-	fmt.Println(v.GetDuration())
+	fmt.Println(v.Filepath())
+	fmt.Println(v.Start())
+	fmt.Println(v.End())
+	fmt.Println(v.Width())
+	fmt.Println(v.Height())
+	fmt.Println(v.Duration())
 }
 
 func DownloadFile(filepath string, url string) error {

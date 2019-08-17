@@ -2,7 +2,6 @@ package cinema
 
 import (
 	"fmt"
-	"log"
 	"os"
 	"os/exec"
 	"strconv"
@@ -19,13 +18,13 @@ type Video struct {
 	duration float64
 }
 
-func MakeVideo(filepath string) Video {
+func MakeVideo(filepath string) (Video, error) {
 	cmd := exec.Command("ffprobe", "-v", "quiet", "-print_format", "json", "-show_format", "-show_streams", filepath)
 	out, err := cmd.Output()
 
 	if err != nil {
 		fmt.Println("Error: FFPROBE did not work. Check the filename and thatt ffmpeg is correctly installed.", filepath)
-		log.Fatal(err)
+		return Video{}, err
 	}
 
 	json := string(out)
@@ -33,7 +32,7 @@ func MakeVideo(filepath string) Video {
 	height := gjson.Get(json, "streams.0.height").Int()
 	duration := gjson.Get(json, "format.duration").Float()
 
-	return Video{filepath: filepath, width: width, height: height, start: 0, end: duration, duration: duration}
+	return Video{filepath: filepath, width: width, height: height, start: 0, end: duration, duration: duration}, nil
 }
 
 func (v *Video) Render(output string) {
@@ -90,26 +89,26 @@ func (v *Video) SetHeight(height int64) {
 }
 
 // Getters
-func (v *Video) GetFilepath() string {
+func (v *Video) Filepath() string {
 	return v.filepath
 }
 
-func (v *Video) GetStart() float64 {
+func (v *Video) Start() float64 {
 	return v.start
 }
 
-func (v *Video) GetEnd() float64 {
+func (v *Video) End() float64 {
 	return v.end
 }
 
-func (v *Video) GetWidth() int64 {
+func (v *Video) Width() int64 {
 	return v.width
 }
 
-func (v *Video) GetHeight() int64 {
+func (v *Video) Height() int64 {
 	return v.height
 }
 
-func (v *Video) GetDuration() float64 {
+func (v *Video) Duration() float64 {
 	return v.duration
 }

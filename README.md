@@ -3,7 +3,6 @@
 TODO:
 - add concatenation
 - add cropping
-- add ffmpeg.exe support
 
 ## Overview
 
