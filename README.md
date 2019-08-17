@@ -27,7 +27,10 @@ func main() { // cinema/test/test.go
 	}
 
 	// initializing the test video as a cinema video object
-	v := cinema.MakeVideo("test_input.mp4")
+	v, err := cinema.MakeVideo("test_input.mp4")
+	if err != nil {
+		fmt.Println(err)
+	}
 
 	// testing all setters
 	v.Trim(0, 10)
@@ -37,12 +40,12 @@ func main() { // cinema/test/test.go
 	v.Render("test_output.mov") // notice how it can convert formats with ease
 
 	// testing all getters
-	fmt.Println(v.GetFilepath())
-	fmt.Println(v.GetStart())
-	fmt.Println(v.GetEnd())
-	fmt.Println(v.GetWidth())
-	fmt.Println(v.GetHeight())
-	fmt.Println(v.GetDuration())
+	fmt.Println(v.Filepath())
+	fmt.Println(v.Start())
+	fmt.Println(v.End())
+	fmt.Println(v.Width())
+	fmt.Println(v.Height())
+	fmt.Println(v.Duration())
 }
 ```
 
