@@ -58,5 +58,5 @@ func main() { // cinema/test/test.go
 - [ ] test windows and ubuntu support 
 
 ## Contact
-John T. Guibas [@jtguibas](https://github.com/jtguibas)
+[jtguibas](https://github.com/jtguibas)
 
