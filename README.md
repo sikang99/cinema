@@ -1,4 +1,8 @@
-# cinema : a lightweight video editor for golang 🤠
+# cinema : a lightweight video editor for golang
+
+
+
+![alt text](https://i.imgur.com/uYRpL29.jpg "github.com/jtguibas/cinema")
 
 ## Overview [![GoDoc](https://godoc.org/github.com/jtguibas/cinema?status.svg)](https://godoc.org/github.com/jtguibas/cinema)
 
@@ -42,7 +46,7 @@ func main() { // cinema/test/test.go
 }
 ```
 
-### TODO
+## TODO
 
 - [ ] add concatenation support
 - [ ] improve godoc documentation
