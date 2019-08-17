@@ -56,6 +56,8 @@ func main() { // cinema/test/test.go
 - [ ] add cropping support
 - [ ] expand to audio
 - [ ] test windows and ubuntu support 
+- [ ] implement fps support
+- [ ] implement bitrate support
 
 ## Contact
 [jtguibas](https://github.com/jtguibas)
