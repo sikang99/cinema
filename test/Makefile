@@ -3,7 +3,7 @@
 #
 PROG=cinema_test
 usage:
-	@echo "make [edit|build|run|clean]"
+	@echo "usage: make [edit|build|run|clean]"
 
 edit e:
 	vi test.go
