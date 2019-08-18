@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"io"
+	"log"
 	"net/http"
 	"os"
 
@@ -41,6 +42,12 @@ func main() {
 }
 
 func DownloadFile(filepath string, url string) error {
+	// check if the file exist already
+	finfo, err := os.Stat(filepath)
+	if err != nil {
+		return err
+	}
+	log.Println(finfo.Name(), finfo.Size())
 
 	// Get the data
 	resp, err := http.Get(url)
