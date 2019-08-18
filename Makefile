@@ -9,6 +9,9 @@ usage:
 edit e:
 	vi cinema.go
 
+build b:
+	go build
+
 clean:
 	cd test; make clean
 #----------------------------------------------------------------------------------

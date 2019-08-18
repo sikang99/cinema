@@ -14,6 +14,9 @@ build b:
 run r:
 	./$(PROG)
 
+play p:
+	ffplay *.mov
+
 clean:
 	rm -f $(PROG) *.mp4 *.mov
 

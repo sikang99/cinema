@@ -7,7 +7,7 @@ import (
 	"net/http"
 	"os"
 
-	"github.com/jtguibas/cinema"
+	"github.com/sikang99/cinema"
 )
 
 func main() {

@@ -1,4 +1,4 @@
-module github.com/jtguibas/cinema
+module github.com/sikang99/cinema
 
 go 1.12
 
