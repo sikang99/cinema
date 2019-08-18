@@ -18,6 +18,7 @@ clean:
 git g:
 	@echo "> make (git:g) [update|store]"
 git-update gu:
+	make clean
 	git add .
 	git commit -a -m "forked and modify test code"
 	git push
